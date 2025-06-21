@@ -1,11 +1,134 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const features = [
+  {
+    title: "Dynamic Lessons",
+    desc: "Bite-sized branding tips you can use instantly.",
+  },
+  {
+    title: "Custom Avatars",
+    desc: "Show off your vibe. Make it you.",
+  },
+  {
+    title: "Evolving Streaks",
+    desc: "Grow your skills. Grow your mascot.",
+  },
+  {
+    title: "Community Quests",
+    desc: "Team up for real-world brand missions.",
+  },
+  {
+    title: "Creative Feedback",
+    desc: "Get fun, bite-sized critique.",
+  },
+  {
+    title: "Leaderboards",
+    desc: "Rise in the ranks. Win the game.",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arkire — Marketing is a Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Optional Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <!-- Umami Tracking -->
+    <script defer src="https://eu.umami.is/script.js" data-website-id="YOUR-UMAMI-ID"></script>
+  </head>
+
+  <body class="bg-arkire-pale text-[#333] font-sans scroll-smooth">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-white shadow-sm border-b border-orange-100">
+      <div class="text-xl font-bold text-arkire-orange">arkire</div>
+      <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+        <li><a href="#about" class="hover:text-arkire-orange">About</a></li>
+        <li><a href="#features" class="hover:text-arkire-orange">Features</a></li>
+        <li><a href="#join" class="hover:text-arkire-orange">Join</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 py-24">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-arkire-orange mb-6 animate-fadeInUp">
+        Marketing isn't a lecture. It's a game.
+      </h1>
+      <p class="text-lg md:text-xl text-arkire-brand max-w-xl mb-8 animate-fadeInUp">
+        Arkire helps teens build branding, storytelling, editing & launch skills through challenge-based learning.
+      </p>
+      <a href="#join" class="px-6 py-3 bg-arkire-orange text-white font-semibold rounded-full shadow-md hover:bg-orange-600 transition animate-scaleIn">
+        Join Waitlist
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-arkire-mid px-8 py-20">
+      <div class="max-w-5xl mx-auto text-center space-y-6">
+        <h2 class="text-3xl font-bold text-arkire-brand">Why Arkire?</h2>
+        <p class="text-gray-700">
+          Education is broken. Teens need real-world tools, not lectures. Arkire is your gamified portal to becoming a confident digital creator.
+        </p>
+        <p class="text-gray-700">
+          From social strategy to brand storytelling, Arkire trains tomorrow’s leaders with tools built for Gen Z.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Cards (scrollable) -->
+    <section id="features" class="bg-arkire-light py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold text-center text-arkire-orange mb-8">Features</h3>
+        <div class="flex gap-6 overflow-x-auto pb-4 snap-x scroll-smooth scrollbar-hide">
+          {features.map((feature, idx) => (
+    <div class="min-w-[280px] bg-white p-6 rounded-xl shadow-md text-center flex-shrink-0 snap-start">
+      <h4 class="font-bold text-arkire-orange mb-2">{feature.title}</h4>
+      <p class="text-sm text-gray-700">{feature.desc}</p>
+    </div>
+  ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Waitlist -->
+    <section id="join" class="bg-white text-center py-20 px-6">
+      <h2 class="text-3xl font-bold text-arkire-orange mb-4">Be Part of the Beta</h2>
+      <p class="text-gray-700 mb-8 max-w-xl mx-auto">
+        Get early access, power-ups, and your name on the founder wall. Join the Arkire beta squad.
+      </p>
+      <a
+        href="https://your-waitlist-form.com"
+        target="_blank"
+        class="px-6 py-3 bg-arkire-brand hover:bg-orange-600 text-white font-semibold rounded-full shadow-md transition"
+      >
+        Join Now
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2c2b2b] text-white py-12 px-6 text-sm">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-bold text-lg text-orange-400 mb-2">Arkire</h4>
+          <p>arkire.ma@gmail.com</p>
+          <p>Ontario, Canada</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-orange-400 mb-2">Links</h4>
+          <a href="#about" class="block hover:underline">About</a>
+          <a href="#features" class="block hover:underline">Features</a>
+          <a href="#join" class="block hover:underline">Join Waitlist</a>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-orange-400 mb-2">Social</h4>
+          <a href="https://www.instagram.com/arkireapp/" target="_blank" class="block hover:underline">Instagram</a>
+          <a href="https://discord.gg/yj2Mex9aHG" target="_blank" class="block hover:underline">Discord</a>
+          <a href="https://www.linkedin.com/company/arkire/" target="_blank" class="block hover:underline">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
