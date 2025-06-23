@@ -1,57 +1,66 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arkire</title>
+  <link rel="icon" href="/assets/mascot_main.png" type="image/png">
+
+    <div class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee] overflow-y-scroll scroll-snap-y font-sans text-[#333]">
+      {/* Top Navbar */}
+      <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="text-2xl font-bold text-orange-500">arkire</div>
+        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+        <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
+        <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
+        <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
+      </ul>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
 {/* Newsletter & Discord Divider - Animated and Branded */}
-    <section class="w-full py-20 px-6 bg-orange-50 flex flex-col items-center text-center space-y-16">
-      {/* Newsletter */}
-      <div class="space-y-4 animate-fadeInUp">
-        <h2 class="text-3xl font-bold text-orange-600">📬 Stay in the Loop</h2>
-        <p class="text-gray-700 max-w-xl mx-auto text-left">
-          <b>Get a front-row seat to what we’re building.</b>
-          <br />
-          <br />
-          Arkire is more than just a project: it's a movement powered by curiosity, creativity, and constant iteration. Our newsletter keeps you in the loop with what we’re launching, what we’re learning, and what’s next.
-          <br />
-          <br />
-          Whether it's new feature drops, raw thoughts from our team, or exclusive previews of what’s cooking behind the scenes, this is the place to hear it first.
-          <br />
-          <br />
-          No spam, no fluff. Just genuinely interesting stuff for people who care about the future we’re building. If you’re someone who loves early access, honest reflections, and a peek behind the curtain, the Arkzette newsletter is made for you.
+    <section class="w-full bg-gradient-to-br from-[#fff4e8] via-[#ffe5cc] to-[#fff9f2] py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        
+        <!-- Newsletter Card -->
+        <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-orange-100 transition hover:scale-[1.01] duration-300">
+        <h2 class="text-4xl font-extrabold text-orange-600 mb-4 flex items-center gap-3">
+            📬 Stay in the Loop
+        </h2>
+        <p class="text-gray-700 text-sm leading-relaxed mb-6">
+            <strong>Get a front-row seat to what we’re building.</strong><br /><br />
+            Arkire is more than a project—it's a movement powered by curiosity, creativity, and constant iteration.
+            Whether it's feature drops, raw thoughts, or exclusive sneak peeks, our newsletter gives you early access
+            to all the coolest things happening at HQ.
         </p>
-        <a
-          href="https://arkzette.beehiiv.com/subscribe"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          Subscribe to Arkzette
+        <a href="https://arkzette.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+            Subscribe to Arkzette
         </a>
-      </div>
+        </div>
 
-      {/* Divider Line */}
-      <div class="w-12 h-1 bg-orange-300 rounded-full animate-scaleIn"></div>
-
-      {/* Discord */}
-      <div class="space-y-4 animate-fadeInUp delay-150">
-        <h2 class="text-3xl font-bold text-orange-700">💬 Join Our Discord</h2>
-        <p class="text-gray-700 max-w-xl mx-auto text-left">
-          <b>Arkire isn’t being built behind closed doors - it's being built with <i>you</i>. </b>
-          <br />
-          <br />
-          The Arkzette Discord is our digital HQ: it’s where builders meet believers, and where your voice can influence real product decisions. 
-          <br />
-          <br />
-          Whether you're a designer, dev, dreamer, or just someone who stumbled across something cool, this space is for you.
-          Ask questions, drop feature ideas, report bugs, share memes, or just hang out while we build. 
-          <br />
-          <br />
-          It’s casual, collaborative, and open to anyone who wants to be part of something from the ground up.
-
+        <!-- Discord Card -->
+        <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-orange-100 transition hover:scale-[1.01] duration-300">
+        <h2 class="text-4xl font-extrabold text-orange-700 mb-4 flex items-center gap-3">
+            💬 Join Our Discord
+        </h2>
+        <p class="text-gray-700 text-sm leading-relaxed mb-6">
+            <strong>Arkire isn’t being built behind closed doors — it's built with <em>you</em>.</strong><br /><br />
+            Our Discord is the digital HQ: where builders meet believers, where feedback turns into features, and where
+            your voice shapes the future. Designers, devs, dreamers — everyone’s welcome.
         </p>
-        <a
-          href="https://discord.gg/yj2Mex9aHG"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          Join Our Discord
+        <a href="https://discord.gg/yj2Mex9aHG" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+            Join Our Discord
         </a>
-      </div>
+        </div>
+
+    </div>
     </section>

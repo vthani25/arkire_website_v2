@@ -1,0 +1,135 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arkire</title>
+  <link rel="icon" href="/assets/mascot_main.png" type="image/png">
+
+    <div class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee] overflow-y-scroll scroll-snap-y font-sans text-[#333]">
+      {/* Top Navbar */}
+      <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="text-2xl font-bold text-orange-500">arkire</div>
+        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+        <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
+        <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
+        <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
+      </ul>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      {/* Team Section */}
+      <section id="team" class="bg-white py-16 px-4">
+  <h2 class="text-3xl font-bold text-center text-arkire-orange mb-12">Meet the Arkire Team</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <!-- Artin Kennedy -->
+    <div class="relative group overflow-hidden rounded-xl shadow-lg">
+      <img src="/team/artin.jpeg" alt="Artin Kennedy" class="w-full h-80 object-cover" />
+      <div class="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-sm text-center pointer-events-none">
+        <p> Freshman at Richmond Hill HS. Loves music, art, and good vibes. Aspiring business leader!</p>
+      </div>
+      <div class="text-center mt-4">
+        <h3 class="text-lg font-bold">Artin Kennedy</h3>
+        <p class="text-sm text-gray-500">CEO / Founder</p>
+        <div class="flex justify-center items-center mt-2">
+                <a href="https://www.linkedin.com/in/artin-kennedy-b30607341/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                    src="/assets/linkedin_logo.png" 
+                    alt="LinkedIn" 
+                    class="w-8 h-8 transition-transform duration-200 hover:scale-110 hover:shadow-lg cursor-pointer" 
+                    />
+                </a>
+            </div>
+      <br>
+      </div>
+    </div>
+
+    <!-- Ajitesh Sharma -->
+    <div class="relative group overflow-hidden rounded-xl shadow-lg">
+      <img src="/team/aji.jpeg" alt="Ajitesh Sharma" class="w-full h-80 object-cover" />
+      <div class="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-sm text-center pointer-events-none">
+        <p>Into making cool stuff through business & STEM. Loves gaming, yapping, exercising, and goofing off!</p>
+      </div>
+      <div class="text-center mt-4">
+        <h3 class="text-lg font-bold">Ajitesh Sharma</h3>
+        <p class="text-sm text-gray-500">Business Co-Founder</p>
+        <div class="flex justify-center items-center mt-2">
+                <a href="https://www.linkedin.com/in/ajitesh-sharma-195b21307/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                    src="/assets/linkedin_logo.png" 
+                    alt="LinkedIn" 
+                    class="w-8 h-8 transition-transform duration-200 hover:scale-110 hover:shadow-lg cursor-pointer" 
+                    />
+                </a>
+            </div>
+        <br>
+      </div>
+    </div>
+
+    <!-- Shruthika Omkumar -->
+    <div class="relative group overflow-hidden rounded-xl shadow-lg">
+      <img src="/team/kia.jpeg" alt="Shruthika Omkumar" class="w-full h-80 object-cover" />
+      <div class="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-sm text-center pointer-events-none">
+        <p>Loves design, writing, oversharing, and yapping. Always here for the fun &lt;33 </p>
+      </div>
+      <div class="text-center mt-4">
+        <h3 class="text-lg font-bold">Shruthika (Kia) Omkumar</h3>
+        <p class="text-sm text-gray-500">Technical Co-Founder</p>
+        <div class="flex justify-center items-center mt-2">
+                <a href="https://www.linkedin.com/in/shruthika-o/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                    src="/assets/linkedin_logo.png" 
+                    alt="LinkedIn" 
+                    class="w-8 h-8 transition-transform duration-200 hover:scale-110 hover:shadow-lg cursor-pointer" 
+                    />
+                </a>
+            </div>
+        <br>
+      </div>
+    </div>
+
+    <!-- Thanishkka -->
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+        <img src="/team/thanishkka.jpeg" alt="Thanishkka Vijayabaskar" class="w-full h-80 object-cover" />
+        <div class="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-sm text-center pointer-events-none">
+            <p>Handles all things technical and loves blending design with real-world impact!</p>
+        </div>
+        <div class="text-center mt-4">
+            <h3 class="text-lg font-bold">Thanishkka Vijayabaskar</h3>
+            <p class="text-sm text-gray-500">CTO</p>
+            <div class="flex justify-center items-center mt-2">
+                <a href="https://www.linkedin.com/in/vthanishkka" target="_blank" rel="noopener noreferrer">
+                    <img 
+                    src="/assets/linkedin_logo.png" 
+                    alt="LinkedIn" 
+                    class="w-8 h-8 transition-transform duration-200 hover:scale-110 hover:shadow-lg cursor-pointer" 
+                    />
+                </a>
+            </div>
+            <br>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+{/*Contact Form */}
+  <section id="contact" class="text-center py-16 bg-[#fff4e7]">
+    <h2 class="text-3xl font-bold text-arkire-orange mb-4">Contact Us</h2>
+    <p class="text-gray-700 mb-6">Got questions or ideas? Reach out — we’d love to hear from you!</p>
+    <form class="max-w-md mx-auto space-y-4">
+      <input type="text" placeholder="Name" class="w-full p-3 rounded border border-orange-300" required />
+      <input type="email" placeholder="Email" class="w-full p-3 rounded border border-orange-300" required />
+      <textarea placeholder="Message" rows="5" class="w-full p-3 rounded border border-orange-300" required></textarea>
+      <button type="submit" class="bg-arkire-orange text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-orange-600">Send Message</button>
+    </form>
+  </section>
