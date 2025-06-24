@@ -8,50 +8,37 @@ function JoinedContent() {
   const { user } = useUser();
   const { signOut } = useClerk();
 
-  if (!user) return <p>Loading user info...</p>;
+  if (!user) return;
 
   const handleSignOut = () => {
     signOut({ redirectUrl: '/' });
   };
 
   return (
-    <div className="max-w-md mx-auto p-8 text-center">
-      <h1 className="text-3xl font-bold mb-6 text-orange-600">
-        Welcome, {user.firstName}!
-      </h1>
-      <p className="mb-8">You have successfully joined the waitlist.</p>
-      <button
+    <div className="min-h-screen flex items-center justify-center bg-orange-50 text-center p-6">
+      <div className="bg-white p-10 rounded-xl shadow-lg max-w-lg w-full">
+        <h1 className="text-3xl font-bold text-orange-600 mb-4">🎉 Welcome to Arkire!</h1>
+        {user && (
+          <p className="text-gray-700 text-lg">
+            Hello <span className="font-semibold">{user.firstName}</span>, your account has been successfully created.
+          </p>
+        )}
+        <p className="mt-4 text-sm text-gray-500">You're all set to start exploring your marketing journey.</p>
+        <button
         onClick={handleSignOut}
-        className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold"
+        className="mt-5 px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium text-lg rounded-xl shadow-lg transition cursor-pointer"
       >
-        Logout
+        Go Back
       </button>
+      </div>
     </div>
-  );
-}
-
-function JoinWaitlistSignInButton() {
-  return (
-    <SignInButton mode="modal" redirectUrl="/joined">
-      <button className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold">
-        Join Waitlist
-      </button>
-    </SignInButton>
   );
 }
 
 export default function JoinedPage() {
   return (
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <div className="min-h-screen flex items-center justify-center">
-        <SignedOut>
-          <JoinWaitlistSignInButton />
-        </SignedOut>
-
-        <SignedIn>
-          <JoinedContent />
-        </SignedIn>
-      </div>
+      <ClerkProvider publishableKey={import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY}>
+            <JoinedContent />
     </ClerkProvider>
   );
 }

@@ -1,14 +1,21 @@
+---
+import { ClerkProvider } from '@clerk/clerk-react';
+const publishableKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+const { title } = Astro.props;
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/assets/mascot_main.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Arkire</title>
 	</head>
-	<body>
-		<slot />
+	<body class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee]">
+		<ClerkProvider publishableKey={publishableKey}>
+      		<slot />
+    	</ClerkProvider>
 	</body>
 </html>
 

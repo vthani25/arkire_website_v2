@@ -1,5 +1,7 @@
 ---
-
+import JoinWaitlist from '../components/JoinWaitlist.jsx';
+import Layout from "../layouts/Layout.astro"
+import FeatureSwiper from '../components/FeatureSwiper.jsx';
 ---
 
 <!DOCTYPE html>
@@ -9,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkire</title>
   <link rel="icon" href="/assets/mascot_main.png" type="image/png">
+  <link rel="stylesheet" href="/styles/global.css">
 </head>
-
+<Layout>
     <body class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee] overflow-y-scroll scroll-snap-y font-sans text-[#333]">
       {/* Top Navbar */}
       <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
@@ -19,7 +22,6 @@
         <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
         <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
         <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
-        <li><a href="/joined" class="hover:text-arkire-orange">Joined</a></li>
       </ul>
         <div class="md:hidden">
           <button id="menu-toggle" class="text-gray-600 focus:outline-none">
@@ -34,109 +36,137 @@
       <div class="flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12 gap-10">
         {/* Left Content */}
         <div class="md:w-1/2 text-center md:text-left">
-          <h1 class="text-4xl md:text-6xl font-extrabold text-orange-600 leading-tight drop-shadow-md">
-            Marketing isn't a lecture. It's a game.
+          <h1 class="text-4xl md:text-6xl font-extrabold text-orange-600 leading-tight drop-shadow-md transition-all duration-500 animate-fade-in-down">
+            <span class="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent hover:text-orange-700 hover:scale-105">
+              Marketing isn't a lecture. It's a game.
+            </span>
           </h1>
-          <p class="mt-6 text-lg md:text-xl text-[#c7723d] max-w-xl">
-            Marketing education is broken. It's memorization. It's expensive.  People don't need more useless descriptions. They need real-world oriented scenarios.
-          </p>
-        </div>
-        
 
-        {/* Right Image/Art */}
-        <div class="md:w-1/2 relative flex items-center justify-center flex items-center">
+          <p class="mt-6 text-lg md:text-xl text-[#c7723d] max-w-xl transition-colors duration-500 hover:text-[#a14c1f] animate-fade-in delay-200">
+            Marketing education is <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">broken</span>. It's <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">memorization</span>. It's <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">expensive</span>. People don't need more useless descriptions. They need <span class="underline-offset-4 underline decoration-double decoration-1 decoration-orange-500">real-world oriented scenarios. </span>
+          </p>
+
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 max-w-md animate-fade-in-up delay-500">
+            <JoinWaitlist client:visible />
+          </div>
+
+          <div class="mt-6 text-sm text-gray-600 italic hover:text-orange-500 transition-colors duration-300">
+            🎁 Early sign-ups get exclusive power-ups and perks!
+          </div>
+        </div>
+
+
+            {/* Right Image/Art */}
+      <div class="md:w-1/2 relative justify-center flex items-center">
           <div class="absolute w-72 h-72 bg-orange-300 opacity-30 rounded-full blur-3xl -top-20 -left-10 animate-pulse -z-10"></div>
           <img src = "/assets/mascot_main.png" alt="Arkire Promo" class="w-full max-w-md rounded-2xl shadow-lg"/>
         </div>
       </div>
 
+        </div>
+
             {/* About Section */}
-      <section class="bg-[#fab97d] px-4 pt-10 pb-10 text-white">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center bg-[#f08c4f] p-10 rounded-xl shadow-lg">
-          <div>
-            <h3 class="text-4xl font-bold mb-4 ">About Arkire</h3>
-            <p class="mb-4">
-              Marketing education is broken. Who decides who’s a real marketer? Who decides what’s a trend? Who decides what’s “professional”?
-            </p>
-            <p class="mb-4">
-              With classes, workshops, mentors, and hands-on challenges, Arkire helps teens build real-world skills—branding, storytelling, video editing, social media, launch tactics, and feedback loops that connect human ideas to personal digital impact.
-            </p>
-            <p class="mb-4">
-              Because when you win the game, you actually learn the skills.
-            </p>
-            <p>
-              With Arkire, all you need is curiosity and drive. We’ll help with the rest.
-            </p>
-              
-          </div>
-          <img src="/assets/arkire_promo.png" alt="We are Arkire" class="rounded-xl shadow-lg mx-auto block max-w-80" />    
-        </div>
-      </section>
+      <section class="bg-gradient-to-tr from-[#f57f4c] via-[#fcae77] to-[#ffceab] px-6 py-20 text-white font-sans">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.3fr] gap-12 items-center bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-3xl shadow-2xl ring-1 ring-white/20">
 
-      {/* Features */}
-      <section id="features" class="py-16 px-4 bg-white">
-      <h2 class="text-3xl font-bold text-center text-arkire-orange mb-10">Features</h2>
-      <div class="flex overflow-x-auto gap-6 px-2 pb-2 scroll-smooth scrollbar-hide">
-        <!-- Feature Card -->
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">📚 Dynamic Lessons</h4>
-          <p class="text-sm text-gray-700">Quick, interactive lessons that teach real skills—not just definitions.</p>
+        <div>
+          <h3 class="text-5xl font-extrabold mb-6 text-white drop-shadow-md tracking-tight">
+            About <span class="text-orange-500">Arkire</span>
+          </h3>
+
+          <p class="mb-5 text-lg leading-relaxed text-white/90">
+            Marketing today feels like a checklist. A textbook. A gatekeeping game. Who even decides what's “professional”? What’s trendy? What’s legit?
+          </p>
+
+          <p class="mb-5 text-lg leading-relaxed text-white/90">
+            Arkire flips the script. We give teens hands-on tools to create their own path with brand design, storytelling, short-form video, launch tactics, social media strategies, and feedback loops that actually make ideas grow.
+          </p>
+
+          <p class="mb-5 text-lg italic text-white/80">
+            It's not about memorizing. It's about building. Testing. Launching. Learning by doing.
+          </p>
+
+          <p class="text-lg text-white/90">
+            If you're curious, creative, and ready to play the real game of marketing: we’ve got your back.
+          </p>
         </div>
 
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">⚔️ Challenge-Based Learning</h4>
-          <p class="text-sm text-gray-700">Do, don’t memorize. Every module comes with an action-packed prompt.</p>
-        </div>
 
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">🧍 Custom Avatars</h4>
-          <p class="text-sm text-gray-700">Design your brand persona and evolve your identity as you grow.</p>
-        </div>
-
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">🔥 Streaks</h4>
-          <p class="text-sm text-gray-700">Keep your creative momentum. More days, more perks, more growth.</p>
-        </div>
-
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">🌍 Community Quests</h4>
-          <p class="text-sm text-gray-700">Collaborate with other users to solve real-world brand challenges.</p>
-        </div>
-
-        <div class="min-w-[280px] bg-[#fff6ee] p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-orange-500 mb-2">🎨 Creative Feedback</h4>
-          <p class="text-sm text-gray-700">Get constructive, positive feedback from peers and mentors.</p>
-        </div>
+        <img 
+          src="/assets/arkire_promo.png" 
+          alt="We are Arkire" 
+          class="rounded-2xl shadow-xl mx-auto inline-block w-full max-w-md hover:scale-105 transition-transform duration-300 ease-in-out border-4 border-orange-500 p-2 rounded-xxl"
+        />
       </div>
     </section>
 
 
-      {/* Why Us */}
-      <section id="why-us" class="text-center bg-white py-16 px-4">
-        <h2 class="text-3xl font-bold text-arkire-orange mb-6">Why Us?</h2>
-        <p class="text-gray-700 max-w-3xl mx-auto mb-8">
-          We're not just teaching marketing—we’re gamifying it. Arkire helps teens level up skills like storytelling, branding, and content creation with fun challenges and feedback, not lectures.
-        </p>
+      {/* Features */}
+      <section id="features" class="py-16 px-4 bg-orange-100">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-orange-700 text-center mb-10 relative">
+        Features
+        <span class="block w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mt-3 rounded-full animate-pulse"></span>
+      </h2>
+
+      <FeatureSwiper client:load />
     </section>
 
+
+
+      {/* Why Us */}
+      <section id="why-us" class="text-center bg-gradient-to-br from-white via-[#fff5eb] to-[#ffe2c5] py-20 px-6">
+  <h2 class="text-4xl font-extrabold text-orange-500 drop-shadow-md mb-6">Why Us?</h2>
+
+  <p class="text-gray-800 max-w-3xl mx-auto text-lg leading-relaxed mb-10">
+    We're not just teaching marketing—we’re <span class="highlight">gamifying</span> it. Arkire helps teens level up skills like 
+    <span class="text-orange-600 font-semibold">storytelling</span>, <span class="text-orange-600 font-semibold">branding</span>, and 
+    <span class="text-orange-600 font-semibold">content creation</span> with fun challenges and real feedback—not boring lectures.
+  </p>
+
+  <div class="mt-8 flex justify-center gap-4 flex-wrap">
+    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium hover:scale-105 transition-transform">Story-Based</span>
+    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium hover:scale-105 transition-transform">Real Feedback</span>
+    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium hover:scale-105 transition-transform">Interactive</span>
+    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium hover:scale-105 transition-transform">No Tests</span>
+  </div>
+</section>
+
+
  {/*Why Now */}
-    <section id="why-now" class="text-center bg-[#fff4e7] py-16 px-4">
-        <h2 class="text-3xl font-bold text-arkire-orange mb-6">Why Now?</h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow">
-            <h3 class="font-semibold mb-2">🎯 200M+ Creators</h3>
-            <p class="text-gray-600">Creators are rising, but they need structured help with branding and strategy.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow">
-            <h3 class="font-semibold mb-2">📈 $400B EdTech Market</h3>
-            <p class="text-gray-600">EdTech is booming, but most of it still feels boring. We make it real-world focused.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow">
-            <h3 class="font-semibold mb-2">🧠 Gen Z Power</h3>
-            <p class="text-gray-600">We’re digital-first and creative by default—we just need tools that match our energy.</p>
-          </div>
-        </div>
-    </section>
+    <section id="why-now" class="text-center bg-[#fff4e7] py-20 px-6">
+  <h2 class="text-4xl font-extrabold text-orange-500 drop-shadow-md mb-12">Why Now?</h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+    <div class="group bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-bold mb-3 text-orange-500 group-hover:text-orange-600 transition">
+        🎯 200M+ Creators
+      </h3>
+      <p class="text-gray-700 leading-relaxed">
+        Creators are rising, but they need structured help with <span class="font-semibold text-orange-600">branding</span> and strategy.
+      </p>
+    </div>
+
+    <div class="group bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-bold mb-3 text-orange-500 group-hover:text-orange-600 transition">
+        📈 $400B EdTech Market
+      </h3>
+      <p class="text-gray-700 leading-relaxed">
+        EdTech is booming, but most of it still feels <span class="underline decoration-wavy decoration-orange-400">boring</span>. We make it real-world focused.
+      </p>
+    </div>
+
+    <div class="group bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-bold mb-3 text-orange-500 group-hover:text-orange-600 transition">
+        🧠 Gen Z Power
+      </h3>
+      <p class="text-gray-700 leading-relaxed">
+        We’re digital-first and creative by default—we just need tools that match our <span class="italic font-medium text-orange-600">energy</span>.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     {/*Timeline/Roadmap */}
   <section id="timeline" class="py-16 px-4 bg-white">
@@ -162,39 +192,69 @@
   </section>
 
   {/*Testimonials */}
-  <section id="testimonials" class="py-16 px-4 bg-[#fffaf3] text-center">
-    <h2 class="text-3xl font-bold text-arkire-orange mb-12">What Our Users Say</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-700 italic">“Arkire made marketing actually fun. I used the skills to grow my art page.”</p>
-        <h4 class="mt-4 font-bold">— Taylor, 16</h4>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-700 italic">“I learned more in 2 weeks of Arkire than a semester of school.”</p>
-        <h4 class="mt-4 font-bold">— Zayn, 17</h4>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-700 italic">“It’s like Duolingo for branding. And yes—I’m addicted.”</p>
-        <h4 class="mt-4 font-bold">— Aria, 15</h4>
-      </div>
+  <section id="testimonials" class="bg-[#fffaf3] py-20 px-6 text-center relative overflow-hidden">
+  <h2 class="text-4xl font-extrabold text-orange-500 mb-16 drop-shadow-sm">
+    What Our Users Say
+  </h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8">
+    <!-- Testimonial Card -->
+    <div class="testimonial-card md:col-span-5">
+      <blockquote class="bg-white rounded-3xl shadow-xl p-8 relative hover:-translate-y-1 transition-transform">
+        <svg class="absolute top-4 left-6 h-8 w-8 text-orange-300 opacity-40" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.17 6A5 5 0 0 0 2 11v6h6v-6H5.83a3 3 0 0 1 1.34-3.34L7.17 6zM19.17 6A5 5 0 0 0 14 11v6h6v-6h-2.17a3 3 0 0 1 1.34-3.34L19.17 6z" />
+        </svg>
+        <p class="text-gray-700 italic mt-4">“Honestly, Arkire’s newsletter is the only one I actually read. It’s quick, clean, and always gives me something useful.”</p>
+        <h4 class="mt-6 font-bold text-orange-600">– Jason R.</h4>
+      </blockquote>
     </div>
-  </section>
+
+    <div class="testimonial-card md:col-span-4 md:mt-12">
+      <blockquote class="bg-white rounded-3xl shadow-xl p-8 relative hover:-translate-y-1 transition-transform">
+        <p class="text-gray-700 italic">“Joined the Discord out of curiosity… stayed because everyone’s so helpful + the content drops are 🔥.”</p>
+        <h4 class="mt-6 font-bold text-orange-600">– Maddy L.</h4>
+      </blockquote>
+    </div>
+
+    <div class="testimonial-card md:col-span-3">
+      <blockquote class="bg-white rounded-3xl shadow-xl p-8 relative hover:-translate-y-1 transition-transform">
+        <p class="text-gray-700 italic">“Arkire makes marketing actually fun to learn. Big fan of how chill but smart the vibe is.”</p>
+        <h4 class="mt-6 font-bold text-orange-600">– Rayen T.</h4>
+      </blockquote>
+    </div>
+
+    <div class="testimonial-card md:col-span-5 md:col-start-2">
+      <blockquote class="bg-white rounded-3xl shadow-xl p-8 relative hover:-translate-y-1 transition-transform">
+        <p class="text-gray-700 italic">“Every time I open the newsletter, I find a tip I actually use. No fluff.”</p>
+        <h4 class="mt-6 font-bold text-orange-600">– Zane O.</h4>
+      </blockquote>
+    </div>
+
+    <div class="testimonial-card md:col-span-5 md:col-start-7">
+      <blockquote class="bg-white rounded-3xl shadow-xl p-8 relative hover:-translate-y-1 transition-transform">
+        <p class="text-gray-700 italic">“I’ve learned more in one week here than in months of school. Arkire’s Discord is seriously underrated.”</p>
+        <h4 class="mt-6 font-bold text-orange-600">– Noor A.</h4>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 
   {/*FAQ form */}
   <section id="faq" class="py-16 px-4 bg-white">
   <h2 class="text-3xl font-bold text-center text-arkire-orange mb-12">FAQs</h2>
   <div class="max-w-3xl mx-auto space-y-6">
     <div>
-      <h4 class="font-semibold text-orange-500">Is Arkire free?</h4>
-      <p class="text-gray-700">Yes! All beta features are free for early signups.</p>
+      <h4 class="font-semibold text-orange-500">What is Arkire?</h4>
+      <p class="text-gray-700">Arkire is a bite-sized learning app that teaches Gen Z marketing through fun, fast-paced challenges — think Duolingo, but for branding, content, and strategy. It’s designed to help students, founders, and young creatives level up in minutes a day.</p>
     </div>
     <div>
-      <h4 class="font-semibold text-orange-500">Do I need experience?</h4>
-      <p class="text-gray-700">Nope. Whether you're a beginner or creative pro, you'll grow here.</p>
+      <h4 class="font-semibold text-orange-500">Who is Arkire for?</h4>
+      <p class="text-gray-700">Whether you’re a high school student in DECA, a teen founder building your first startup, or just curious about marketing — Arkire is built for you. No fluff, no lectures. Just practical skills that click.</p>
     </div>
     <div>
-      <h4 class="font-semibold text-orange-500">How long is each challenge?</h4>
-      <p class="text-gray-700">Most take 10–20 minutes, perfect for after school or during breaks.</p>
+      <h4 class="font-semibold text-orange-500">How do I sign up?</h4>
+      <p class="text-gray-700">Easy. Once the site launches, just head to our homepage and click “Join the waitlist” or “Get Started”. You’ll get early access, perks, and first dibs on limited drops.</p>
     </div>
   </div>
 </section>
@@ -245,4 +305,5 @@
         </div>
       </footer>
     </body>
-
+  </Layout>
+</html>

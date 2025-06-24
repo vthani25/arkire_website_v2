@@ -1,0 +1,80 @@
+
+/* Smooth scrolling + optional base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: theme('fontFamily.sans');
+  background-color: theme('colors.arkire.pale');
+}
+
+#scroll-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: add spacing between cards */
+.scroll-content > div {
+  margin-right: 1rem;
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+.animate-fade-in-down {
+  animation: fade-in-down 1s ease-out forwards;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.underline-squiggle {
+  display: inline-block;
+  background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='6' xmlns='http://www.w3.org/2000/svg'><path d='M0 3 Q2 6 4 3 T8 3 T12 3 T16 3 T20 3 T24 3 T28 3 T32 3 T36 3' stroke='%23c7723d' fill='transparent' stroke-width='2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 6px;
+  padding-bottom: 2px;
+}
+
+.highlight {
+  background-color: rgba(255, 153, 51, 0.15);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+
