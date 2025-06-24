@@ -61,14 +61,6 @@ body {
   animation: fade-in-up 1s ease-out forwards;
 }
 
-.underline-squiggle {
-  display: inline-block;
-  background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='6' xmlns='http://www.w3.org/2000/svg'><path d='M0 3 Q2 6 4 3 T8 3 T12 3 T16 3 T20 3 T24 3 T28 3 T32 3 T36 3' stroke='%23c7723d' fill='transparent' stroke-width='2'/></svg>");
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% 6px;
-  padding-bottom: 2px;
-}
 
 .highlight {
   background-color: rgba(255, 153, 51, 0.15);
@@ -77,4 +69,98 @@ body {
   font-weight: 600;
 }
 
+.accordian {
+  margin: 60px auto;
+  width: 350px;
+}
 
+.accordian li{
+  list-style:none;
+  width:100%;
+  margin:20px;
+  padding:10px;
+  border-radius:8px;
+  background-color: #f9f9f9;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.1),
+              -6px -6px 10px -1px rgba(255,255,255,0.7); 
+}
+
+.accordian li label{
+  display:flex;
+  align-items:center;
+  padding:10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size:18px;
+}
+
+.accordian .content {
+  display:block;
+  padding: 0 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #555;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+label::before{
+  content: "+";
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.accordian input[type="checkbox"]:checked + label + .content {
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+
+.accordian input[type="checkbox"]:checked + label::before{
+  content: "-";
+}
+
+/* Border shimmer animation */
+@keyframes shimmer-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.border-shimmer {
+  position: relative;
+  border-radius: 1.5rem; /* match rounded-3xl */
+  z-index: 0;
+}
+
+.border-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(120deg, #f97316, #fb923c, #fac415);
+  background-size: 200% 200%;
+  animation: shimmer-border 2s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-shimmer:hover::before {
+  opacity: 1;
+}

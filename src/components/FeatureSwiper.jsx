@@ -48,7 +48,7 @@ export default function FeatureSwiper() {
       slidesPerView={3}
       loop={true}
       autoplay={{
-        delay: 2500,
+        delay: 2200,
         disableOnInteraction: true,
         pauseOnMouseEnter: true,
       }}
