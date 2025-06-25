@@ -86,18 +86,39 @@ const keywords = "arkire blog, gen z branding, content strategy, youth marketing
 
 
   <section class="min-h-screen max-w-4xl mx-auto py-12 px-6">
-    <h1 class="text-4xl font-extrabold mb-8 text-orange-600">📝 Articles</h1>
+  <h1 class="text-4xl font-extrabold mb-8 text-orange-600">📝 Articles</h1>
 
-    <div class="space-y-8">
-      {posts.map(post => (
-        <a href={`/blog/${post.slug}`} class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+  <div class="space-y-12">
+    {posts.map((post, i) => (
+      <div
+        class={`flex flex-col md:flex-row ${
+          i % 2 !== 0 ? 'md:flex-row-reverse' : ''
+        } items-center gap-6`}
+      >
+        <!-- Conditional Image -->
+        <img
+          src={i % 2 === 1 ? "/assets/article2.png" : "/assets/article1.png"}
+          alt="Mascot pointing"
+          class="w-24 h-auto flex-shrink-0 border-2 border-orange-500 rounded-lg shadow-md"
+        />
+
+        <!-- Article Content -->
+        <a
+          href={`/blog/${post.slug}`}
+          aria-label={`Read article: ${post.title}`}
+          class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition w-full"
+        >
           <h2 class="text-2xl font-bold text-orange-500">{post.title}</h2>
           <p class="text-sm text-gray-600">{post.date}</p>
           <p class="mt-2 text-gray-700">{post.description}</p>
         </a>
-      ))}
-    </div>
-  </section>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
   {/* Footer */}
     <footer class="bg-[#2c2b2b] text-white py-6 px-8 ">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-10 md:text-left">
