@@ -58,7 +58,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
       <p class="mt-6 text-base sm:text-lg md:text-xl text-[#c7723d] max-w-xl mx-auto md:mx-0 transition-colors duration-500 hover:text-[#a14c1f] animate-fade-in delay-200">
         Marketing education is <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">broken</span>. 
         It's <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">memorization</span>. 
-        It's <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]">expensive</span>. 
+        It's <span class="underline underline-offset-4 decoration-wavy decoration-[#c7723d]" style="text-underline-offset: 0.3em;">expensive</span>. 
         People don't need more useless descriptions. They need 
         <span class="underline-offset-4 underline decoration-double decoration-1 decoration-orange-500">real-world oriented scenarios.</span>
       </p>
@@ -233,6 +233,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
   <section id="testimonials" class="min-h-screen bg-[#fffaf3] py-20 px-4 sm:px-6 lg:px-8 text-center relative">
     <h2
       class="text-3xl sm:text-4xl font-extrabold text-orange-500 drop-shadow-sm underline underline-offset-8 decoration-wavy mb-12"
+      style="text-underline-offset: 0.4em;"
     >
       What Our Users Say
     </h2>
@@ -401,7 +402,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
 
   {/*FAQ form */}
   <section id="faq" class="min-h-screen py-16 px-4 bg-gradient-to-b from-[#ffe5c7] to-[#fac89d]">
-  <h2 class="text-6xl font-bold text-center text-arkire-orange mb-12 underline underline-offset-8 decoration-wavy">FAQs</h2>
+  <h2 class="text-6xl font-bold text-center text-arkire-orange mb-12 underline underline-offset-8 decoration-wavy pb-2">FAQs</h2>
   <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
     <ul class="accordian">
       <h1 class="text-1xl md:text-2xl font-extrabold text-orange-500 px-8 text-center mb-10 tracking-tight drop-shadow-sm" >General Platform Use</h1>
@@ -433,21 +434,22 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
           <input type="checkbox" name="accordian" id="fourth"/>
           <label for="fourth">How does Arkire help me learn marketing</label>
           <div class="content">
-            <p class="text-gray-700">Arkire is a bite-sized learning app that teaches Gen Z marketing through fun, fast-paced challenges — think Duolingo, but for branding, content, and strategy. It’s designed to help students, founders, and young creatives level up in minutes a day.</p>
+            <p class="text-gray-700">We break marketing down into swipeable, interactive micro-lessons — so you’re learning by doing. You’ll master real-world topics like copywriting, branding, growth hacking, and even pitch decks — all while earning badges + bonuses.</p>
           </div>
       </li>
       <li>
           <input type="checkbox" name="accordian" id="fifth"/>
           <label for="fifth">Are the lessons free?</label>
           <div class="content">
-            <p class="text-gray-700">Whether you’re a high school student in DECA, a teen founder building your first startup, or just curious about marketing — Arkire is built for you. No fluff, no lectures. Just practical skills that click.</p>
+            <p class="text-gray-700">Yep. The core learning experience is totally free. For those who want extras (like premium packs, real mentors, or exclusive events), we’ll have optional upgrades — but learning should always be accessible.
+</p>
           </div>
       </li>
       <li>
           <input type="checkbox" name="accordian" id="sixth"/>
           <label for="sixth">What topics are covered?</label>
           <div class="content">
-            <p class="text-gray-700">Easy. Once the site launches, just head to our homepage and click “Join the waitlist” or “Get Started”. You’ll get early access, perks, and first dibs on limited drops.</p>
+            <p class="text-gray-700">We cover everything from “How to write a viral hook” to “What makes a landing page convert.” Topics are updated monthly and shaped by what real brands + creators are doing in the wild.</p>
           </div>
       </li>
     </ul>
@@ -457,14 +459,14 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
           <input type="checkbox" name="accordian" id="seventh"/>
           <label for="seventh">Can I join the intern team or contribute?</label>
           <div class="content">
-            <p class="text-gray-700">Arkire is a bite-sized learning app that teaches Gen Z marketing through fun, fast-paced challenges — think Duolingo, but for branding, content, and strategy. It’s designed to help students, founders, and young creatives level up in minutes a day.</p>
+            <p class="text-gray-700">We’re always looking for ambitious students to join the Arkire squad. DM us on LinkedIn or Instagram (@arkireapp) or apply via the website to get involved in marketing, growth, or product.</p>
           </div>
       </li>
       <li>
           <input type="checkbox" name="accordian" id="eighth"/>
           <label for="eighth">How do I collaborate or partner with Arkire?</label>
           <div class="content">
-            <p class="text-gray-700">Whether you’re a high school student in DECA, a teen founder building your first startup, or just curious about marketing — Arkire is built for you. No fluff, no lectures. Just practical skills that click.</p>
+            <p class="text-gray-700">If you’re an influencer, educator, program director, or just someone with an audience — reach out. We offer equity-based deals, collabs, and custom programs to grow together.</p>
           </div>
       </li>
     </ul>
