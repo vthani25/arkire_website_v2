@@ -1,0 +1,52 @@
+---
+import fs from 'fs';
+import path from 'path';
+import { marked } from 'marked';
+
+const { slug } = Astro.params;
+
+const postPath = path.resolve(`./src/pages/blog/${slug}.md`);
+
+let content;
+
+try {
+  content = fs.readFileSync(postPath, 'utf-8');
+} catch (err) {
+  // Throw a regular error with 404 in message, which you can catch in your app if needed
+  throw new Error(`404: Article "${slug}" not found.`);
+}
+
+const frontmatterRegex = /^---\n([\s\S]+?)\n---/;
+const frontmatterMatch = content.match(frontmatterRegex);
+
+let frontmatter = {};
+let markdownBody = content;
+
+if (frontmatterMatch) {
+  const fmText = frontmatterMatch[1];
+  markdownBody = content.slice(frontmatterMatch[0].length);
+  frontmatter = Object.fromEntries(
+    fmText.split('\n').map(line => {
+      const [key, ...rest] = line.split(':');
+      return [key.trim(), rest.join(':').trim()];
+    })
+  );
+}
+
+const html = marked.parse(markdownBody);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{frontmatter.title ?? 'Blog Article'}</title>
+  </head>
+  <body style="font-family: sans-serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem;">
+    <h1>{frontmatter.title ?? 'Untitled Article'}</h1>
+    {frontmatter.date && <p><em>{frontmatter.date}</em></p>}
+    <article set:html={html}></article>
+    <a href="/blog" style="display: inline-block; margin-top: 2rem; color: #f97316; text-decoration: none;">
+      ← Back to Blog
+    </a>
+  </body>
+</html>
