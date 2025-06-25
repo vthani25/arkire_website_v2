@@ -5,7 +5,7 @@ date: "2025-06-25"
 ---
 
 <nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
-    <div class="text-2xl font-bold text-orange-500">arkire</div>
+    <img src="/assets/long_light1.png" alt="logo" class="max-w-20"/>
     <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
       <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
       <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
