@@ -1,0 +1,74 @@
+---
+// FeatureCarousel.astro
+const cards = [
+  {
+    title: "📚 Dynamic Lessons",
+    img: "/assets/lessons.png",
+    description: "Quick, interactive lessons that teach real skills—not just definitions.",
+  },
+  {
+    title: "⚔️ Challenge-Based Learning",
+    img: "/assets/challenge.png",
+    description: "Do, don’t memorize. Every module comes with an action-packed prompt.",
+  },
+  {
+    title: "🧍 Custom Avatars",
+    img: "/assets/avatars.png",
+    description: "Design your brand persona and evolve your identity as you grow.",
+  },
+  {
+    title: "🔥 Streaks",
+    img: "/assets/streak.png",
+    description: "Keep your creative momentum. More days, more perks, more growth.",
+  },
+  {
+    title: "🌍 Community Quests",
+    img: "/assets/community1.png",
+    description: "Collaborate with other users to solve real-world brand challenges.",
+  },
+  {
+    title: "🎨 Creative Feedback",
+    img: "/assets/feedback.png",
+    description: "Get constructive, positive feedback from peers and mentors.",
+  },
+];
+---
+<div class="relative">
+  <!-- Scroll container -->
+  <div
+    id="carousel"
+    class="flex overflow-auto scroll-smooth scrollbar-hide gap-4 mx-auto"
+    style="width: 1008px;" >
+    {cards.map((card) => (
+      <div
+        class="w-[320px] flex-shrink-0 bg-[#ffbe85] rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300"
+        key={card.title}
+      >
+        <img
+          src={card.img}
+          alt={card.title}
+          class="w-full h-48 object-cover rounded-lg mb-4"
+        />
+        <h4 class="text-lg font-bold text-orange-700 mb-2">{card.title}</h4>
+        <p class="text-sm text-gray-700">{card.description}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Left / Right buttons (unchanged) -->
+  <button
+    onclick="document.getElementById('carousel').scrollBy({ left: -336, behavior: 'smooth' })"
+    class="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10"
+    aria-label="Scroll left"
+  >
+    ◀
+  </button>
+
+  <button
+    onclick="document.getElementById('carousel').scrollBy({ left: 336, behavior: 'smooth' })"
+    class="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10"
+    aria-label="Scroll right"
+  >
+    ▶
+  </button>
+</div>

@@ -1,48 +1,76 @@
 ---
 import JoinWaitlist from '../components/JoinWaitlist.jsx';
 import Layout from "../layouts/Layout.astro"
-import FeatureSwiper from '../components/FeatureSwiper.jsx';
+import FeatureSwiper from '../components/FeatureSwiper.astro';
+const title = "Arkire"
+const description = "Arkire is a bite-sized, challenge-based app that helps Gen Z master marketing through storytelling, branding, and real-world strategy."
+const keywords = "arkire, marketing, education, gamification, Gen Z, branding, content creation, social media, interactive learning, startup, app development, marketing skills, digital marketing, community building, marketing challenges, marketing tools"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Brief description of your site's purpose or this page" />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkire</title>
+  <title>{title}</title>
   <link rel="icon" href="/assets/mascot_main.png" type="image/png">
   <link rel="stylesheet" href="/styles/global.css">
 </head>
 <Layout>
 <body class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee]  font-sans text-[#333]">
   <!-- Top Navbar -->
-  <nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
-    <img src="/assets/long_light1.png" alt="logo" class="max-w-20"/>
-    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+  <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+  <div class="flex justify-between items-center px-4 md:px-8 py-4">
+    <img src="/assets/long_light1.png" alt="logo" class="max-w-20" />
+
+    {/* Desktop Menu */}
+    <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
       <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
       <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
       <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
       <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
     </ul>
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
-  </nav>
+
+    {/* Mobile Hamburger */}
+    <button
+      id="menu-toggle"
+      class="md:hidden text-gray-600 focus:outline-none"
+      aria-label="Toggle Menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+  </div>
+
+  {/* Mobile Dropdown Menu */}
+  <ul
+    id="mobile-menu"
+    class="hidden flex-col gap-4 px-4 pb-4 text-sm font-medium text-gray-700 md:hidden"
+  >
+    <li><a href="/" class="block py-2 hover:text-arkire-orange">Home</a></li>
+    <li><a href="/socials" class="block py-2 hover:text-arkire-orange">Socials</a></li>
+    <li><a href="/team" class="block py-2 hover:text-arkire-orange">Team</a></li>
+    <li><a href="/articles" class="block py-2 hover:text-arkire-orange">Articles</a></li>
+  </ul>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('menu');
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener('click', () => {
-      // Toggle the 'hidden' class
-      mobileMenu.classList.toggle('hidden');
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
   </script>
+</nav>
+
 
 
   <!-- Hero Section -->
@@ -51,7 +79,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
     <!-- Left Content -->
     <div class="w-full md:w-1/2 text-center md:text-left md:pr-8">
       <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-orange-600 leading-tight drop-shadow-md transition-all duration-500 animate-fade-in-down">
-        <span class="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent hover:text-orange-700 hover:scale-105 pb-3">
+        <span class="mt-5 inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent hover:scale-105 pb-3">
           Marketing isn't a lecture. It's a game.
         </span>
       </h1>
@@ -136,7 +164,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
 
         <!-- Swiper component will render here -->
         <div class="max-w-6xl mx-auto">
-          <FeatureSwiper client:load />
+          <FeatureSwiper/>
         </div>
       </div>
       </section>
@@ -233,11 +261,10 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
   {/*Testimonials */}
   <section id="testimonials" class="min-h-screen bg-[#fffaf3] py-20 px-4 sm:px-6 lg:px-8 text-center relative">
     <h2
-      class="text-3xl sm:text-4xl font-extrabold text-orange-500 drop-shadow-sm underline underline-offset-8 mb-12"
-      style="text-underline-offset: 0.4em;"
-    >
+      class="text-3xl sm:text-4xl font-extrabold text-orange-500 drop-shadow-sm mb-4">
       What Our Users Say
     </h2>
+    <span class="block w-32 sm:w-32 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mt-3 rounded-full animate-pulse mb-12"></span>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12">
       <!-- Testimonial Card -->
@@ -403,7 +430,8 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
 
   {/*FAQ form */}
   <section id="faq" class="min-h-screen py-16 px-4 bg-gradient-to-b from-[#ffe5c7] to-[#fac89d]">
-  <h2 class="text-6xl font-bold text-center text-arkire-orange mb-12 underline underline-offset-8 pb-2 " style="text-underline-offset: 0.em;">FAQs</h2>
+  <h2 class="text-6xl font-bold text-center text-arkire-orange ">FAQs</h2>
+  <span class="block w-32 sm:w-32 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mt-3 rounded-full animate-pulse mb-12"></span>
   <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
     <ul class="accordian">
       <h1 class="text-1xl md:text-2xl font-extrabold text-orange-500 px-8 text-center mb-10 tracking-tight drop-shadow-sm" >General Platform Use</h1>
@@ -433,7 +461,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
       <h1 class="text-1xl md:text-2xl font-extrabold text-orange-500 px-8 text-center mb-10 tracking-tight drop-shadow-sm">Content & Learning</h1>
       <li>
           <input type="checkbox" name="accordian" id="fourth"/>
-          <label for="fourth">How does Arkire help me learn marketing</label>
+          <label for="fourth">How does Arkire help me learn marketing?</label>
           <div class="content">
             <p class="text-gray-700">We break marketing down into swipeable, interactive micro-lessons — so you’re learning by doing. You’ll master real-world topics like copywriting, branding, growth hacking, and even pitch decks — all while earning badges + bonuses.</p>
           </div>

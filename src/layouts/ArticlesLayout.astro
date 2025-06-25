@@ -1,0 +1,16 @@
+---
+const { title, description, keywords } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords.join(', ')} />}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
