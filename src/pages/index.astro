@@ -18,7 +18,7 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
   <!-- Top Navbar -->
   <nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
     <div class="text-2xl font-bold text-orange-500">arkire</div>
-    <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
       <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
       <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
       <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
@@ -33,13 +33,24 @@ import FeatureSwiper from '../components/FeatureSwiper.jsx';
     </div>
   </nav>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      // Toggle the 'hidden' class
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+
   <!-- Hero Section -->
   <section class="flex flex-col-reverse md:flex-row items-center min-h-screen justify-between px-4 md:px-20 py-16">
     
     <!-- Left Content -->
     <div class="w-full md:w-1/2 text-center md:text-left md:pr-8">
       <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-orange-600 leading-tight drop-shadow-md transition-all duration-500 animate-fade-in-down">
-        <span class="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent hover:text-orange-700 hover:scale-105">
+        <span class="inline-block bg-gradient-to-r from-orange-700 to-orange-400 bg-clip-text text-transparent hover:text-orange-700 hover:scale-105 pb-3">
           Marketing isn't a lecture. It's a game.
         </span>
       </h1>

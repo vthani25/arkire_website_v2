@@ -11,22 +11,32 @@
 <body class="bg-gradient-to-b from-[#faf4f0] to-[#fcd5bb] font-sans text-[#333]">
     <div class="bg-gradient-to-b from-[#faf4f0] to-[#fcd5bb] font-sans text-[#333]">
       {/* Top Navbar */}
-      <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div class="text-2xl font-bold text-orange-500">arkire</div>
-        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-        <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
-        <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
-        <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
-        <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
-      </ul>
-        <div class="md:hidden">
-          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
+      <nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="text-2xl font-bold text-orange-500">arkire</div>
+    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+      <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
+      <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
+      <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
+      <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      // Toggle the 'hidden' class
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
       {/* Team Section */}
   <section id="team" class=" py-24 px-6 text-center">
@@ -133,10 +143,11 @@
   <section id="contact" class="text-center py-16">
     <h2 class="text-3xl font-bold text-arkire-orange mb-4">Contact Us</h2>
     <p class="text-gray-700 mb-6 px-4">Got questions or ideas? Reach out — we’d love to hear from you!</p>
-    <form class="max-w-md mx-auto space-y-4">
-      <input type="text" placeholder="Name" class="w-full p-3 rounded border border-orange-300" required />
-      <input type="email" placeholder="Email" class="w-full p-3 rounded border border-orange-300" required />
-      <textarea placeholder="Message" rows="5" class="w-full p-3 rounded border border-orange-300" required></textarea>
+    <form action="https://api.web3forms.com/submit" method="POST" class="max-w-md mx-auto space-y-4">
+      <input type="hidden" name="access_key" value="9273573b-808a-463c-b19e-5ad161a759cd">
+      <input type="text" name="name" placeholder="Name" class="w-full p-3 rounded border border-orange-300" required />
+      <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded border border-orange-300" required />
+      <textarea name="message" placeholder="Message" rows="5" class="w-full p-3 rounded border border-orange-300" required></textarea>
       <button type="submit" class="bg-arkire-orange text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-orange-600 w-full sm:w-auto text-sm sm:text-base">Send Message</button>
     </form>
   </section>

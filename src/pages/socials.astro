@@ -11,22 +11,32 @@
 <body class="bg-gradient-to-b from-[#faf4f0] to-[#fcd5bb] font-sans text-[#333]">
 
   <!-- Top Navbar -->
-  <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
+  <nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
     <div class="text-2xl font-bold text-orange-500">arkire</div>
-    <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-      <li><a href="/" class="hover:text-orange-500 transition-colors duration-300">Home</a></li>
-      <li><a href="/socials" class="hover:text-orange-500 transition-colors duration-300">Socials</a></li>
-      <li><a href="/team" class="hover:text-orange-500 transition-colors duration-300">Team</a></li>
+    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+      <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
+      <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
+      <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
       <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
     </ul>
     <div class="md:hidden">
       <button id="menu-toggle" class="text-gray-600 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
     </div>
   </nav>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      // Toggle the 'hidden' class
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
   <h2 class="text-7xl font-extrabold text-center mb-10 relative pt-20">
   <span class="inline-block bg-gradient-to-r from-orange-600 via-orange-400 to-yellow-300 bg-clip-text text-transparent pb-4">

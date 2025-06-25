@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro';
 
 const posts = [
   {
-    slug: 'intro-to-arkire',
-    title: 'Intro to Arkire',
-    date: '2025-06-24',
+    title: "PPC Advertising Basics: A Beginner's Guide",
+    slug: "ppc-basics",
+    date: "2025-06-25",
     description: 'What Arkire is all about and how it started.',
   },
   {
-    slug: 'how-we-built-it',
-    title: 'How We Built It',
-    date: '2025-06-20',
+    title: "The Future of AI-Assisted Writing and Editing",
+    slug: "ai-writing",
+    date: "2025-06-25",
     description: 'Behind the scenes of building Arkire as teens.',
   },
 ];
@@ -19,24 +19,35 @@ const posts = [
 
 <Layout>
 {/* Top Navbar */}
-      <nav class="flex justify-between items-center px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div class="text-2xl font-bold text-orange-500">arkire</div>
-        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-        <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
-        <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
-        <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
-        <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
-      </ul>
-        <div class="md:hidden">
-          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h1 class="text-4xl font-extrabold mb-8 text-orange-600">📝 Blog</h1>
+<nav class="flex justify-between items-center px-4 md:px-8 py-4 shadow-sm border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="text-2xl font-bold text-orange-500">arkire</div>
+    <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+      <li><a href="/" class="hover:text-arkire-orange">Home</a></li>
+      <li><a href="/socials" class="hover:text-arkire-orange">Socials</a></li>
+      <li><a href="/team" class="hover:text-arkire-orange">Team</a></li>
+      <li><a href="/articles" class="hover:text-arkire-orange">Articles</a></li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      // Toggle the 'hidden' class
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+  <section class="min-h-screen max-w-4xl mx-auto py-12 px-6">
+    <h1 class="text-4xl font-extrabold mb-8 text-orange-600">📝 Articles</h1>
 
     <div class="space-y-8">
       {posts.map(post => (
@@ -48,4 +59,48 @@ const posts = [
       ))}
     </div>
   </section>
+  {/* Footer */}
+    <footer class="bg-[#2c2b2b] text-white py-6 px-8 ">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-10 md:text-left">
+          <div>
+            <img src="/assets/long_dark.png" alt="footer" class="max-w-20"/>
+            <p>arkire.ma@gmail.com</p>
+            <p>Ontario, Canada</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-2">Newsletter</h4>
+            <a href="https://arkzette.beehiiv.com/subscribe" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-orange-400/80 underline">Subscribe to Arkzette</a>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-2">Discord</h4>
+            <a href="https://discord.gg/yj2Mex9aHG"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-orange-400/80 underline">Join our Discord Server</a>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-2">Follow Us</h4>
+            <div class="flex gap-4">
+              <a href="https://www.linkedin.com/company/arkire/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn">
+                <img src="/assets/linkedin_logo.png" alt="LinkedIn" class="w-12 h-12" />
+              </a>
+              {/* Change to Insta logo */}
+              <a 
+              href="https://www.instagram.com/arkireapp/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram">
+                <img src="/assets/instagram_logo.png" alt="Instagram" class="w-12 h-12" />
+              </a>
+            </div>
+          </div>
+        </div>
+    </footer>
+
 </Layout>
