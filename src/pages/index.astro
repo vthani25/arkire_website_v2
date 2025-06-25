@@ -71,11 +71,9 @@ const keywords = "arkire, marketing, education, gamification, Gen Z, branding, c
   </script>
 </nav>
 
-
-
   <!-- Hero Section -->
   <section class="flex flex-col-reverse md:flex-row items-center min-h-screen justify-between px-4 md:px-20 py-16">
-    
+
     <!-- Left Content -->
     <div class="w-full md:w-1/2 text-center md:text-left md:pr-8">
       <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-orange-600 leading-tight drop-shadow-md transition-all duration-500 animate-fade-in-down">
@@ -92,13 +90,19 @@ const keywords = "arkire, marketing, education, gamification, Gen Z, branding, c
         <span class="underline-offset-4 underline decoration-double decoration-1 decoration-orange-500">real-world oriented scenarios.</span>
       </p>
 
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0 animate-fade-in-up delay-500">
-        <JoinWaitlist client:visible />
-      </div>
-
       <div class="mt-6 text-sm text-gray-600 italic hover:text-orange-500 transition-colors duration-300">
         🎁 Early sign-ups get exclusive power-ups and perks!
       </div>
+
+      <!-- GetWaitlist Widget Replacement -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0 animate-fade-in-up delay-500">
+          <div id="getWaitlistContainer" class="w-full" data-waitlist_id="29705" data-widget_type="WIDGET_1"></div>
+        </div>
+
+        <link rel="stylesheet" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css" />
+        <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js" defer></script>
+
+      
     </div>
 
     <!-- Right Image/Art -->

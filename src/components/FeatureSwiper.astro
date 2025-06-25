@@ -1,5 +1,4 @@
 ---
-// FeatureCarousel.astro
 const cards = [
   {
     title: "📚 Dynamic Lessons",
@@ -18,7 +17,7 @@ const cards = [
   },
   {
     title: "🔥 Streaks",
-    img: "/assets/streak.png",
+    img: "/assets/streak_mascot.png",
     description: "Keep your creative momentum. More days, more perks, more growth.",
   },
   {
@@ -33,15 +32,16 @@ const cards = [
   },
 ];
 ---
-<div class="relative">
+
+<div class="relative px-4 sm:px-6 lg:px-12">
   <!-- Scroll container -->
   <div
     id="carousel"
-    class="flex overflow-auto scroll-smooth scrollbar-hide gap-4 mx-auto"
-    style="width: 1008px;" >
+    class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4"
+  >
     {cards.map((card) => (
       <div
-        class="w-[320px] flex-shrink-0 bg-[#ffbe85] rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300"
+        class="snap-start w-[90vw] sm:w-[300px] md:w-[320px] flex-shrink-0 bg-[#ffbe85] rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300"
         key={card.title}
       >
         <img
@@ -55,10 +55,10 @@ const cards = [
     ))}
   </div>
 
-  <!-- Left / Right buttons (unchanged) -->
+  <!-- Scroll buttons -->
   <button
     onclick="document.getElementById('carousel').scrollBy({ left: -336, behavior: 'smooth' })"
-    class="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10"
+    class="absolute left-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-1 sm:p-2 text-sm sm:text-base z-10"
     aria-label="Scroll left"
   >
     ◀
@@ -66,7 +66,7 @@ const cards = [
 
   <button
     onclick="document.getElementById('carousel').scrollBy({ left: 336, behavior: 'smooth' })"
-    class="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10"
+    class="absolute right-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-1 sm:p-2 text-sm sm:text-base z-10"
     aria-label="Scroll right"
   >
     ▶
