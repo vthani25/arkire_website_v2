@@ -11,7 +11,7 @@ export async function getStaticPaths() {
       params: { slug: file.replace('.md', '') }
     }));
 
-  return { paths };
+  return paths;
 }
 
 const { slug } = Astro.params;
