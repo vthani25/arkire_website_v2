@@ -3,14 +3,25 @@ import fs from 'fs';
 import path from 'path';
 import { marked } from 'marked';
 
+export async function getStaticPaths() {
+  const files = fs.readdirSync('./src/pages/blog');
+  const paths = files
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({
+      params: { slug: file.replace('.md', '') }
+    }));
+
+  return { paths };
+}
+
 const { slug } = Astro.params;
-const postPath = path.resolve(`./src/pages/blog/${slug}.md`);
+const filePath = path.resolve(`./src/pages/blog/${slug}.md`);
 
 let content = '';
 try {
-  content = fs.readFileSync(postPath, 'utf-8');
+  content = fs.readFileSync(filePath, 'utf-8');
 } catch {
-  throw new Error(`404: Post not found`);
+  throw new Error('Post not found');
 }
 
 const frontmatterRegex = /^---\n([\s\S]+?)\n---/;
@@ -23,30 +34,23 @@ if (match) {
   const fmText = match[1];
   markdown = content.slice(match[0].length);
   frontmatter = Object.fromEntries(
-    fmText.split('\n').map(line => {
+    fmText.split('\n').map((line) => {
       const [key, ...rest] = line.split(':');
       return [key.trim(), rest.join(':').trim()];
     })
   );
 }
+
 const html = marked.parse(markdown);
 ---
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arkire</title>
-    <link rel="icon" href="/assets/mascot_main.png" type="image/png">
+    <title>{frontmatter.title || 'Post'}</title>
   </head>
-  <body style="font-family: sans-serif; background: #fffdfb; padding: 2rem;">
-    <main class="container">
-      <h1>{frontmatter.title}</h1>
-      <p><em>{frontmatter.date}</em></p>
-      
-      <article set:html={html} class="markdown"></article>
-      <a href="/blog">← Back to Blog</a>
-    </main>
-
+  <body>
+    <h1>{frontmatter.title}</h1>
+    <p>{frontmatter.date}</p>
+    <div set:html={html}></div>
   </body>
 </html>
