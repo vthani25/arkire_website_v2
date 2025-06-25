@@ -10,7 +10,6 @@ body {
 }
 
 #scroll-container {
-  overflow: hidden;
   width: 100%;
 }
 
@@ -71,13 +70,17 @@ body {
 
 .accordian {
   margin: 60px auto;
-  width: 350px;
+  max-width: 350px;  /* max width instead of fixed width */
+  width: 90%;        /* width shrinks on small screens */
+  padding: 0 15px;   /* small horizontal padding */
+  box-sizing: border-box; /* include padding in width */
 }
+
 
 .accordian li{
   list-style:none;
   width:100%;
-  margin:20px;
+  margin:20px 0;
   padding:10px;
   border-radius:8px;
   background-color: #f9f9f9;
@@ -97,7 +100,7 @@ body {
 .accordian .content {
   display:block;
   padding: 0 10px;
-  background-color: #fff;
+  background-color: #fae9dc;
   border-radius: 8px;
   color: #555;
   max-height: 0;
@@ -123,6 +126,26 @@ input[type="checkbox"] {
 
 .accordian input[type="checkbox"]:checked + label::before{
   content: "-";
+}
+
+@media (max-width: 480px) {
+  .accordian li {
+    margin: 12px 0;
+  }
+
+  .accordian li label {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .accordian .content {
+    padding: 8px 8px 16px;
+  }
+
+  label::before {
+    font-size: 20px;
+    margin-right: 8px;
+  }
 }
 
 /* Border shimmer animation */
