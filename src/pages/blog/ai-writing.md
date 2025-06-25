@@ -84,7 +84,7 @@ AI-assisted writing and editing tools are here to stay, offering significant adv
 </p>
 
 <p style="font-size: 1.125rem; line-height: 1.75; margin-bottom: 3rem;">
-This human touch is learnable with practice and determination. At <a href="https://arkire.com" target="_blank" rel="noopener noreferrer" style="color:#ea580c; text-decoration:none; font-weight: 600;">Arkire</a>, we make that process easier and more engaging, helping you share what matters most.
+This human touch is learnable with practice and determination. At <a href="https://arkire-website-v2.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:#ea580c; text-decoration:none; font-weight: 600;">Arkire</a>, we make that process easier and more engaging, helping you share what matters most.
 </p>
 
 </div>

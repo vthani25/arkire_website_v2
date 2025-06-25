@@ -101,7 +101,7 @@ PPC Advertisements are widely used for a key reason. They’re <strong>fast, che
 </p>
 
 <p style="font-family: 'Georgia', serif; font-size: 1.125rem; line-height: 1.75; color: #444; margin-bottom: 3rem;">
-If you want to develop your digital marketing skills while having fun, check out <a href="https://arkire.com" target="_blank" rel="noopener noreferrer" style="color:#ea580c; text-decoration:none; font-weight: 600;">Arkire</a>.
+If you want to develop your digital marketing skills while having fun, check out <a href="https://arkire-website-v2.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:#ea580c; text-decoration:none; font-weight: 600;">Arkire</a>.
 </p>
 
 
