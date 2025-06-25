@@ -92,7 +92,7 @@ const keywords = "arkire blog, gen z branding, content strategy, youth marketing
       {posts.map(post => (
         <a href={`/blog/${post.slug}`} class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
           <h2 class="text-2xl font-bold text-orange-500">{post.title}</h2>
-          <p class="text-sm text-gray-500">{post.date}</p>
+          <p class="text-sm text-gray-600">{post.date}</p>
           <p class="mt-2 text-gray-700">{post.description}</p>
         </a>
       ))}
@@ -103,8 +103,10 @@ const keywords = "arkire blog, gen z branding, content strategy, youth marketing
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-10 md:text-left">
           <div>
             <img src="/assets/long_dark.png" alt="footer" class="max-w-20"/>
-            <p>arkire.ma@gmail.com</p>
-            <p>Ontario, Canada</p>
+            <address class="not-italic text-sm">
+              <a href="mailto:arkire.ma@gmail.com" class="underline hover:text-orange-300">arkire.ma@gmail.com</a><br/>
+              Ontario, Canada
+            </address>
           </div>
           <div>
             <h4 class="font-bold text-lg mb-2">Newsletter</h4>
