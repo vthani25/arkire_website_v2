@@ -78,9 +78,13 @@ const keywords = "arkire blog, gen z branding, content strategy, youth marketing
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        if (mobileMenu) {
+          mobileMenu.classList.toggle("hidden");
+        }
+      });
+    }
   </script>
 </nav>
 

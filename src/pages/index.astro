@@ -1,5 +1,4 @@
 ---
-import JoinWaitlist from '../components/JoinWaitlist.jsx';
 import Layout from "../layouts/Layout.astro"
 import FeatureSwiper from '../components/FeatureSwiper.astro';
 const title = "Arkire"
@@ -10,6 +9,15 @@ const keywords = "arkire, marketing, education, gamification, Gen Z, branding, c
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NWN6JSCQ');
+    </script>
+
   <meta charset="UTF-8">
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
@@ -20,6 +28,11 @@ const keywords = "arkire, marketing, education, gamification, Gen Z, branding, c
 </head>
 <Layout>
 <body class="bg-gradient-to-tr from-[#fff0e6] via-[#ffe5cc] to-[#fffaee]  font-sans text-[#333]">
+  <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWN6JSCQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
   <!-- Top Navbar -->
   <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
   <div class="flex justify-between items-center px-4 md:px-8 py-4">
@@ -65,9 +78,13 @@ const keywords = "arkire, marketing, education, gamification, Gen Z, branding, c
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        if (mobileMenu) {
+          mobileMenu.classList.toggle("hidden");
+        }
+      });
+    }
   </script>
 </nav>
 
